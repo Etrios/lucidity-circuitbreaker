@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: lucidity-circuitbreaker
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:./data/testdb2
+    username: admin
+    password: thisisapassword
+
+  sql:
+    init:
+      schema-locations: classpath:./sql/schema.sql
+      mode: always
+
+app:
+  settings:
+    currentCB: TimeCB
+    isRandomErrorEnabled: false
+    errorRate: 0.5
+    timeDelayEnabled: false
+    operationTimeDelayInMillis: 3000
+
+logging:
+  level:
+    root: INFO # Default log level for everything not explicitly specified
+    com.ganeshl.luciditycircuitbreaker: DEBUG # Set DEBUG level for your application package
+    io.github.resilience4j.circuitbreaker.event: DEBUG
+    org.springframework: INFO # Set INFO level for Spring framework logs
+
+  file:
+    name: logs/application.log # Enable logging to a file
+
+  logback:
+    rollingpolicy:
+      max-history: 7
+      max-file-size: 10MB
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, health, circuitbreakers
+  health:
+    circuitbreakers:
+      enabled: true
+  metrics:
+    enable:
+      all: true
