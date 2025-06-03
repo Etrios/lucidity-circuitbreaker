@@ -15,7 +15,7 @@ spring:
 
 app:
   settings:
-    currentCB: TimeCB
+    currentCB: CustomCountCB
     isRandomErrorEnabled: false
     errorRate: 0.5
     timeDelayEnabled: false

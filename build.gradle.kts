@@ -33,6 +33,7 @@ dependencies {
     runtimeOnly("com.h2database:h2")
     runtimeOnly("io.micrometer:micrometer-registry-prometheus")
 
+    testImplementation("org.mockito:mockito-core:5.11.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.0-M1") // Use the latest stable version
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.11.0-M1")

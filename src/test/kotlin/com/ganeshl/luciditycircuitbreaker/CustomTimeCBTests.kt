@@ -11,7 +11,6 @@ import org.mockito.ArgumentCaptor
 import org.mockito.Captor
 import org.mockito.Mock
 import org.mockito.Mockito.*
-import org.mockito.Spy
 import org.mockito.junit.jupiter.MockitoExtension
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -21,6 +20,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
+import java.util.function.Function
 
 @ExtendWith(MockitoExtension::class)
 @DisplayName("TimeBasedCircuitBreaker Tests")
@@ -43,8 +43,7 @@ class CustomTimeCBTests {
     val successFunction = { "Success" }
     val failingFunction = { throw RuntimeException("Simulated failure") }
 
-    @Spy
-    private val spyFallbackFunction: () -> String = { "Fallback" }
+    private lateinit var mockFallbackFunction: Function<Throwable, String>
 
     private val logger: Logger = LoggerFactory.getLogger(CustomTimeCBTests::class.java)
 
@@ -58,7 +57,12 @@ class CustomTimeCBTests {
             mockEventPublisher
         )
 
-        clearInvocations(spyFallbackFunction)
+        @Suppress("UNCHECKED_CAST") // This suppression is often needed for mocking generic interfaces
+        mockFallbackFunction = mock(Function::class.java) as Function<Throwable, String>
+
+        lenient().`when`(mockFallbackFunction.apply(any<Throwable>())).thenReturn("Fallback")
+
+        clearInvocations(mockFallbackFunction)
         reset(mockEventPublisher)
     }
 
@@ -68,7 +72,7 @@ class CustomTimeCBTests {
         @Test
         @DisplayName("Should allow requests when CLOSED and publish Success Events, fallback not called")
         fun shouldAllowRequestsWhenClosed() {
-            circuitBreaker.execute(successFunction, spyFallbackFunction)
+            circuitBreaker.execute(successFunction, mockFallbackFunction)
 
             assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.state)
             // Time-based CB doesn't have a simple failure count to assert here,
@@ -79,7 +83,7 @@ class CustomTimeCBTests {
             assertTrue(capturedEvent is CircuitBreakerSuccessEvent)
             assertEquals(CB_NAME, capturedEvent.circuitBreakerName)
 
-            verify(spyFallbackFunction, never()).invoke()
+            verify(mockFallbackFunction, never()).apply(any<Throwable>())
             verifyNoMoreInteractions(mockEventPublisher)
         }
 
@@ -90,22 +94,22 @@ class CustomTimeCBTests {
             // (FAILURE_RATE_THRESHOLD is 0.5, so 2 failures out of 4 requests = 50% -> should open)
 
             // 2 success requests at the start
-            circuitBreaker.execute(successFunction, spyFallbackFunction)
-            circuitBreaker.execute(successFunction, spyFallbackFunction)
+            circuitBreaker.execute(successFunction, mockFallbackFunction)
+            circuitBreaker.execute(successFunction, mockFallbackFunction)
             assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.state)
             verify(mockEventPublisher, times(2)).publishEvent(any(CircuitBreakerSuccessEvent::class.java))
             verify(mockEventPublisher, never()).publishEvent(any(CircuitBreakerFailureEvent::class.java))
-            verify(spyFallbackFunction, never()).invoke() // Primary succeeded
+            verify(mockFallbackFunction, never()).apply(any<Throwable>()) // Primary succeeded
 
             // 3rd Request: Failure
             reset(mockEventPublisher) // Reset for the next interaction
-            clearInvocations(spyFallbackFunction)
+            clearInvocations(mockFallbackFunction)
             assertFailsWith<RuntimeException> {
                 circuitBreaker.execute(failingFunction) // No fallback, so it throws
             }
             assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.state) // Should still be closed
             verify(mockEventPublisher, times(1)).publishEvent(any(CircuitBreakerFailureEvent::class.java))
-            verify(spyFallbackFunction, never()).invoke() // No fallback provided in this call
+            verify(mockFallbackFunction, never()).apply(any<Throwable>()) // No fallback provided in this call
 
         }
 
@@ -133,7 +137,7 @@ class CustomTimeCBTests {
             assertEquals(CircuitBreakerState.CLOSED, stateChangeEvent.oldState)
             assertEquals(CircuitBreakerState.OPEN, stateChangeEvent.newState)
 
-            verify(spyFallbackFunction, never()).invoke() // Fallback not provided in failing calls
+            verify(mockFallbackFunction, never()).apply(any<Throwable>()) // Fallback not provided in failing calls
         }
 
         @Test
@@ -151,7 +155,7 @@ class CustomTimeCBTests {
                 mockEventPublisher
             )
             reset(mockEventPublisher)
-            clearInvocations(spyFallbackFunction)
+            clearInvocations(mockFallbackFunction)
 
             // Step 1: Make the circuit OPEN with failures within the window
             // We need enough failures to reach FAILURE_RATE_THRESHOLD within `localFailureWindow`
@@ -175,17 +179,17 @@ class CustomTimeCBTests {
             assertEquals(1, failureEvents.filterIsInstance<CircuitBreakerStateChangedEvent>().count())
 
             // Fallback should have been called for both failures
-            verify(spyFallbackFunction, never()).invoke()
+            verify(mockFallbackFunction, never()).apply(any<Throwable>())
 
             reset(mockEventPublisher) // Clear events for next phase
-            clearInvocations(spyFallbackFunction)
+            clearInvocations(mockFallbackFunction)
 
             // Step 2: Sleep past the `localResetTimeout` to allow transition to HALF_OPEN
             logger.info("Sleeping for ${localResetTimeout.toMillis() + SLEEP_BUFFER_MILLIS}ms to reach HALF_OPEN...")
             Thread.sleep(localResetTimeout.toMillis() + SLEEP_BUFFER_MILLIS)
 
             // Step 3: Execute a success function. This should trigger `allowRequest()` -> `cleanOldRequests()` -> `HALF_OPEN` -> `recordSuccess()` -> `CLOSED`
-            val result = customCB1.execute(successFunction, spyFallbackFunction) // This is the 'test' request in HALF_OPEN
+            val result = customCB1.execute(successFunction, mockFallbackFunction) // This is the 'test' request in HALF_OPEN
             assertEquals(CircuitBreakerState.CLOSED, customCB1.state)
             logger.info("Result after success in HALF_OPEN: $result")
 
@@ -210,7 +214,7 @@ class CustomTimeCBTests {
             assertTrue(events.any { it is CircuitBreakerStateChangedEvent && it.oldState == CircuitBreakerState.HALF_OPEN && it.newState == CircuitBreakerState.CLOSED })
 
             // Fallback should NOT have been called in this phase (because the primary succeeded)
-            verify(spyFallbackFunction, never()).invoke()
+            verify(mockFallbackFunction, never()).apply(any<Throwable>())
 
             verifyNoMoreInteractions(mockEventPublisher)
         }
@@ -231,7 +235,7 @@ class CustomTimeCBTests {
             }
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
             reset(mockEventPublisher)
-            clearInvocations(spyFallbackFunction)
+            clearInvocations(mockFallbackFunction)
         }
 
         @Test
@@ -242,17 +246,17 @@ class CustomTimeCBTests {
             assertFalse(circuitBreaker.allowRequest())
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
             verifyNoInteractions(mockEventPublisher) // No events when simply blocking in OPEN
-            verify(spyFallbackFunction, never()).invoke() // Fallback is not involved in allowRequest()
+            verify(mockFallbackFunction, never()).apply(any<Throwable>()) // Fallback is not involved in allowRequest()
         }
 
         @Test
         @DisplayName("Should execute fallback if OPEN and timeout not elapsed")
         fun shouldExecuteFallbackIfOpenAndTimeoutNotElapsed() {
-            val result = circuitBreaker.execute(successFunction, spyFallbackFunction) // Primary is skipped
+            val result = circuitBreaker.execute(successFunction, mockFallbackFunction) // Primary is skipped
             assertEquals("Fallback", result)
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
 
-            verify(spyFallbackFunction, times(1)).invoke() // Fallback should be called
+            verify(mockFallbackFunction, times(1)).apply(any<Throwable>()) // Fallback should be called
             verify(mockEventPublisher).publishEvent(eventCaptor.capture())
             assertTrue(eventCaptor.value is CircuitBreakerRequestBlockedEvent)
             verifyNoMoreInteractions(mockEventPublisher)
@@ -277,11 +281,11 @@ class CustomTimeCBTests {
         @Test
         @DisplayName("Should record failure via execute and remain OPEN when already OPEN, fallback called")
         fun shouldRecordFailureAndRemainOpenWhenAlreadyOpen() {
-            val result = circuitBreaker.execute(failingFunction, spyFallbackFunction)
+            val result = circuitBreaker.execute(failingFunction, mockFallbackFunction)
             assertEquals("Fallback", result)
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
 
-            verify(spyFallbackFunction, times(1)).invoke() // Fallback should be called
+            verify(mockFallbackFunction, times(1)).apply(any<Throwable>()) // Fallback should be called
             verify(mockEventPublisher).publishEvent(eventCaptor.capture())
             assertTrue(eventCaptor.value is CircuitBreakerRequestBlockedEvent) // Request is blocked, not failed directly
             verifyNoMoreInteractions(mockEventPublisher)
@@ -290,11 +294,11 @@ class CustomTimeCBTests {
         @Test
         @DisplayName("Should record success via execute and remain OPEN when already OPEN, fallback called")
         fun shouldRecordSuccessAndRemainOpenWhenAlreadyOpen() {
-            val result = circuitBreaker.execute(successFunction, spyFallbackFunction)
+            val result = circuitBreaker.execute(successFunction, mockFallbackFunction)
             assertEquals("Fallback", result)
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
 
-            verify(spyFallbackFunction, times(1)).invoke() // Fallback should be called
+            verify(mockFallbackFunction, times(1)).apply(any<Throwable>()) // Fallback should be called
             verify(mockEventPublisher).publishEvent(eventCaptor.capture())
             assertTrue(eventCaptor.value is CircuitBreakerRequestBlockedEvent) // Request is blocked
             verifyNoMoreInteractions(mockEventPublisher)
@@ -319,7 +323,7 @@ class CustomTimeCBTests {
             circuitBreaker.allowRequest() // Trigger HALF_OPEN transition
             assertEquals(CircuitBreakerState.HALF_OPEN, circuitBreaker.state)
             reset(mockEventPublisher)
-            clearInvocations(spyFallbackFunction)
+            clearInvocations(mockFallbackFunction)
         }
 
         @Test
@@ -328,13 +332,13 @@ class CustomTimeCBTests {
             assertTrue(circuitBreaker.allowRequest())
             assertEquals(CircuitBreakerState.HALF_OPEN, circuitBreaker.state)
             verifyNoInteractions(mockEventPublisher)
-            verify(spyFallbackFunction, never()).invoke() // allowRequest itself doesn't involve fallback
+            verify(mockFallbackFunction, never()).apply(any<Throwable>()) // allowRequest itself doesn't involve fallback
         }
 
         @Test
         @DisplayName("Should transition to CLOSED on successful request in HALF_OPEN, fallback not called")
         fun shouldTransitionToClosedOnSuccessInHalfOpen() {
-            circuitBreaker.execute(successFunction, spyFallbackFunction) // Primary succeeds, so fallback isn't called
+            circuitBreaker.execute(successFunction, mockFallbackFunction) // Primary succeeds, so fallback isn't called
             assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.state)
 
             // Verify events: Success event + State changed event
@@ -343,13 +347,13 @@ class CustomTimeCBTests {
             assertTrue(events.any { it is CircuitBreakerSuccessEvent })
             assertTrue(events.any { it is CircuitBreakerStateChangedEvent && it.oldState == CircuitBreakerState.HALF_OPEN && it.newState == CircuitBreakerState.CLOSED })
 
-            verify(spyFallbackFunction, never()).invoke() // Success, so fallback not called
+            verify(mockFallbackFunction, never()).apply(any<Throwable>()) // Success, so fallback not called
         }
 
         @Test
         @DisplayName("Should transition to OPEN on failed request in HALF_OPEN, fallback IS called")
         fun shouldTransitionToOpenOnFailureInHalfOpen() {
-            val result = circuitBreaker.execute(failingFunction, spyFallbackFunction)
+            val result = circuitBreaker.execute(failingFunction, mockFallbackFunction)
             assertEquals("Fallback", result) // Fallback should be called
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state) // Circuit should go back to OPEN
 
@@ -359,7 +363,7 @@ class CustomTimeCBTests {
             assertTrue(events.any { it is CircuitBreakerFailureEvent })
             assertTrue(events.any { it is CircuitBreakerStateChangedEvent && it.oldState == CircuitBreakerState.HALF_OPEN && it.newState == CircuitBreakerState.OPEN })
 
-            verify(spyFallbackFunction, times(1)).invoke() // Fallback should be called
+            verify(mockFallbackFunction, times(1)).apply(any<Throwable>()) // Fallback should be called
         }
     }
 
@@ -376,7 +380,7 @@ class CustomTimeCBTests {
                 mockEventPublisher
             )
             reset(mockEventPublisher)
-            clearInvocations(spyFallbackFunction)
+            clearInvocations(mockFallbackFunction)
         }
 
         @Test
@@ -385,7 +389,7 @@ class CustomTimeCBTests {
             val result = circuitBreaker.execute(successFunction)
             assertEquals("Success", result)
             assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.state)
-            verify(spyFallbackFunction, never()).invoke()
+            verify(mockFallbackFunction, never()).apply(any<Throwable>())
             verify(mockEventPublisher).publishEvent(any(CircuitBreakerSuccessEvent::class.java))
         }
 
@@ -394,13 +398,13 @@ class CustomTimeCBTests {
         fun executeShouldCallFallbackOnFailureInClosed() {
             // Assert it is CLOSED first and then call the failing function
             assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.state)
-            val result = circuitBreaker.execute(failingFunction, spyFallbackFunction)
+            val result = circuitBreaker.execute(failingFunction, mockFallbackFunction)
 
             assertEquals("Fallback", result)
             // The state should remain closed as the failure count is still one
             assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.state)
             verify(mockEventPublisher).publishEvent(any(CircuitBreakerFailureEvent::class.java))
-            verify(spyFallbackFunction, times(1)).invoke()
+            verify(mockFallbackFunction, times(1)).apply(any<Throwable>())
         }
 
         @Test
@@ -408,18 +412,18 @@ class CustomTimeCBTests {
         fun executeShouldOpenCircuitOnFailureRateThresholdAndCallFallback() {
             // Simulate failures to open the circuit based on failure rate
             // 2 failures out of 3 calls will open it (0.66 > 0.5 threshold)
-            circuitBreaker.execute(successFunction, spyFallbackFunction)
+            circuitBreaker.execute(successFunction, mockFallbackFunction)
             Thread.sleep(10)
-            val result1 = circuitBreaker.execute(failingFunction, spyFallbackFunction) // This should trip it
+            val result1 = circuitBreaker.execute(failingFunction, mockFallbackFunction) // This should trip it
             Thread.sleep(10)
-            val result2 = circuitBreaker.execute(failingFunction, spyFallbackFunction) // This will be blocked
+            val result2 = circuitBreaker.execute(failingFunction, mockFallbackFunction) // This will be blocked
 
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
             assertEquals("Fallback", result1) // Fallback for 1st failure
             assertEquals("Fallback", result2) // Fallback for blocked request
 
             // Verify fallback called for each failure
-            verify(spyFallbackFunction, times(2)).invoke() // Called for each failing primary
+            verify(mockFallbackFunction, times(2)).apply(any<Throwable>()) // Called for each failing primary
 
             // Verify events: 1 success, 2 failures, 1 state change (CLOSED -> OPEN)
             verify(mockEventPublisher, times(4)).publishEvent(eventCaptor.capture())
@@ -444,14 +448,14 @@ class CustomTimeCBTests {
             }
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
             reset(mockEventPublisher)
-            clearInvocations(spyFallbackFunction)
+            clearInvocations(mockFallbackFunction)
 
             assertFailsWith<CircuitBreakerOpenException> {
                 circuitBreaker.execute(successFunction) // No fallback provided
             }
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
             verify(mockEventPublisher).publishEvent(any(CircuitBreakerRequestBlockedEvent::class.java))
-            verify(spyFallbackFunction, never()).invoke() // No fallback provided, so not called
+            verify(mockFallbackFunction, never()).apply(any<Throwable>()) // No fallback provided, so not called
         }
 
         @Test
@@ -464,15 +468,15 @@ class CustomTimeCBTests {
             }
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
             reset(mockEventPublisher)
-            clearInvocations(spyFallbackFunction)
+            clearInvocations(mockFallbackFunction)
 
-            val failingFallBackFunction = { throw java.lang.IllegalStateException("Fallback failed!") }
+            val failingFallBackFunction : (Throwable) -> String = { throw java.lang.IllegalStateException("Fallback failed!") }
             assertFailsWith<IllegalStateException> {
                 circuitBreaker.execute(successFunction, failingFallBackFunction)
             }
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
             verify(mockEventPublisher).publishEvent(any(CircuitBreakerRequestBlockedEvent::class.java))
-            // The spyFallbackFunction is not used here, the failingFallBackFunction is.
+            // The mockFallbackFunction is not used here, the failingFallBackFunction is.
             // If you wanted to spy the failingFallBackFunction, you'd need to spy it.
         }
 
@@ -489,17 +493,17 @@ class CustomTimeCBTests {
             circuitBreaker.allowRequest() // Trigger HALF_OPEN transition
             assertEquals(CircuitBreakerState.HALF_OPEN, circuitBreaker.state)
             reset(mockEventPublisher)
-            clearInvocations(spyFallbackFunction)
+            clearInvocations(mockFallbackFunction)
 
             // 3. Execute with success
-            val result = circuitBreaker.execute(successFunction, spyFallbackFunction)
+            val result = circuitBreaker.execute(successFunction, mockFallbackFunction)
             assertEquals("Success", result)
             assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.state)
 
             verify(mockEventPublisher, times(2)).publishEvent(eventCaptor.capture()) // Success + State Change
             assertTrue(eventCaptor.allValues.any { it is CircuitBreakerSuccessEvent })
             assertTrue(eventCaptor.allValues.any { it is CircuitBreakerStateChangedEvent && it.oldState == CircuitBreakerState.HALF_OPEN && it.newState == CircuitBreakerState.CLOSED })
-            verify(spyFallbackFunction, never()).invoke() // Primary succeeded
+            verify(mockFallbackFunction, never()).apply(any<Throwable>()) // Primary succeeded
         }
 
         @Test
@@ -515,17 +519,17 @@ class CustomTimeCBTests {
             circuitBreaker.allowRequest() // Trigger HALF_OPEN transition
             assertEquals(CircuitBreakerState.HALF_OPEN, circuitBreaker.state)
             reset(mockEventPublisher)
-            clearInvocations(spyFallbackFunction)
+            clearInvocations(mockFallbackFunction)
 
             // 3. Execute with failure
-            val result = circuitBreaker.execute(failingFunction, spyFallbackFunction)
+            val result = circuitBreaker.execute(failingFunction, mockFallbackFunction)
             assertEquals("Fallback", result)
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state) // Circuit should go back to OPEN
 
             verify(mockEventPublisher, times(2)).publishEvent(eventCaptor.capture()) // Failure + State Change
             assertTrue(eventCaptor.allValues.any { it is CircuitBreakerFailureEvent })
             assertTrue(eventCaptor.allValues.any { it is CircuitBreakerStateChangedEvent && it.oldState == CircuitBreakerState.HALF_OPEN && it.newState == CircuitBreakerState.OPEN })
-            verify(spyFallbackFunction, times(1)).invoke() // Fallback should be called
+            verify(mockFallbackFunction, times(1)).apply(any<Throwable>()) // Fallback should be called
         }
     }
 }

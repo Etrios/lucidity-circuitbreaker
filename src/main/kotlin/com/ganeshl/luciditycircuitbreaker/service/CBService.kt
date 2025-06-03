@@ -1,9 +1,10 @@
 package com.ganeshl.luciditycircuitbreaker.service
 
+import com.ganeshl.luciditycircuitbreaker.CB.CustomCBFactory
+import com.ganeshl.luciditycircuitbreaker.CB.model.CustomCBType
 import com.ganeshl.luciditycircuitbreaker.config.RuntimeConfigManager
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JCircuitBreakerFactory
 import org.springframework.stereotype.Service
 import java.util.function.Function
 import java.util.function.Supplier
@@ -11,7 +12,8 @@ import java.util.function.Supplier
 
 @Service
 class CBService(
-    private val circuitBreakerFactory: Resilience4JCircuitBreakerFactory,
+    // private val circuitBreakerFactory: Resilience4JCircuitBreakerFactory,
+    private val circuitBreakerFactory: CustomCBFactory,
     private val runtimeConfigManager: RuntimeConfigManager
 ) {
 
@@ -42,7 +44,7 @@ class CBService(
         operation: Supplier<T>,
         fallback: Function<Throwable, T>
     ): T {
-        val circuitBreaker = circuitBreakerFactory.create(circuitBreakerId)
+        val circuitBreaker = circuitBreakerFactory.create(CustomCBType.valueOf(circuitBreakerId))
         val supplierWrapper = Supplier<T> {
             logger.debug("Operation Wrapper Logic Triggered")
             val errorRate = runtimeConfigManager.getErrorRate()
@@ -61,7 +63,7 @@ class CBService(
             operation.get()
         }
 
-        return circuitBreaker.run(supplierWrapper, fallback)
+        return circuitBreaker.execute(supplierWrapper, fallback)
     }
 
 

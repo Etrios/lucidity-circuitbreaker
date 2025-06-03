@@ -4,6 +4,7 @@ import com.ganeshl.luciditycircuitbreaker.CB.model.*
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.context.ApplicationEventPublisher
+import java.util.function.Function
 import java.util.function.Supplier
 
 abstract class AbstractCustomCircuitBreaker (
@@ -34,7 +35,7 @@ abstract class AbstractCustomCircuitBreaker (
 
     override fun <T> execute(
         supplier: Supplier<T>,
-        fallback: (() -> T)?
+        fallback: Function<Throwable, T>?
     ): T {
         if (!allowRequest()) {
             eventPublisher.publishEvent(
@@ -43,7 +44,7 @@ abstract class AbstractCustomCircuitBreaker (
 
             if (fallback != null) {
                 return try {
-                    fallback()
+                    fallback.apply(CircuitBreakerOpenException("CB $name is in $state state. Requests are stopped."))
                 } catch (fallbackException: Exception) {
                     logger.error("CB $name is $state. Fallback failed with ${fallbackException.message}")
                     throw fallbackException
@@ -75,7 +76,9 @@ abstract class AbstractCustomCircuitBreaker (
             }
 
             try {
-                return fallback()
+                val fallbackResult = fallback.apply(ex) // Call apply on Function, pass original exception
+                logger.debug("CB $name returned fallback result after primary failure.")
+                fallbackResult
             } catch (fallbackException: Exception) {
                 throw fallbackException
             }

@@ -316,3 +316,1398 @@ INSERT INTO USERS (id, name, email, phoneNumber) VALUES ('ed341a08-7748-4e29-85b
 2025-06-03T20:17:01.952+05:30  INFO 23704 --- [lucidity-circuitbreaker] [Test worker] l.LucidityCircuitbreakerApplicationTests : Started LucidityCircuitbreakerApplicationTests in 6.268 seconds (process running for 76.084)
 2025-06-03T20:17:02.102+05:30  INFO 23704 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-06-03T20:17:02.108+05:30  INFO 23704 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-03T22:02:19.999+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Starting LucidityCircuitbreakerApplicationKt using Java 17.0.15 with PID 97080 (C:\code-base\lucidity-circuitbreaker\build\classes\kotlin\main started by lgane in C:\code-base\lucidity-circuitbreaker)
+2025-06-03T22:02:20.000+05:30 DEBUG 97080 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Running with Spring Boot v3.4.6, Spring v6.2.7
+2025-06-03T22:02:20.001+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : No active profile set, falling back to 1 default profile: "default"
+2025-06-03T22:02:20.740+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-03T22:02:20.774+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 JDBC repository interface.
+2025-06-03T22:02:20.937+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=60f99361-2f38-3298-9488-caa3f74a96e7
+2025-06-03T22:02:21.139+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-03T22:02:21.145+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-03T22:02:21.146+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-03T22:02:21.188+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-03T22:02:21.188+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1150 ms
+2025-06-03T22:02:21.306+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] c.g.l.config.RuntimeConfigManager        : RuntimeConfigurationManager initialized with values from application.yml {operationTimeDelay=3000, isRandomErrorEnabled=false, timeDelayEnabled=false, currentCB=TimeCB, errorRate=0.5}
+2025-06-03T22:02:21.338+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-03T22:02:21.480+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/testdb2 user=ADMIN
+2025-06-03T22:02:21.482+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-03T22:02:22.067+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2025-06-03T22:02:22.128+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-03T22:02:22.193+05:30  INFO 97080 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Started LucidityCircuitbreakerApplicationKt in 2.657 seconds (process running for 3.157)
+2025-06-03T22:02:22.875+05:30  INFO 97080 --- [lucidity-circuitbreaker] [RMI TCP Connection(2)-192.168.1.8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-03T22:02:22.876+05:30  INFO 97080 --- [lucidity-circuitbreaker] [RMI TCP Connection(2)-192.168.1.8] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-03T22:02:22.877+05:30  INFO 97080 --- [lucidity-circuitbreaker] [RMI TCP Connection(2)-192.168.1.8] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-03T22:02:42.570+05:30  INFO 97080 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker TimeCB
+2025-06-03T22:02:42.580+05:30 ERROR 97080 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: No enum constant com.ganeshl.luciditycircuitbreaker.CB.model.CustomCBType.TimeCB] with root cause
+
+java.lang.IllegalArgumentException: No enum constant com.ganeshl.luciditycircuitbreaker.CB.model.CustomCBType.TimeCB
+	at java.base/java.lang.Enum.valueOf(Enum.java:273)
+	at com.ganeshl.luciditycircuitbreaker.CB.model.CustomCBType.valueOf(CustomCBType.kt)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:47)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:03:38.842+05:30  INFO 97080 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-03T22:03:38.873+05:30  INFO 97080 --- [lucidity-circuitbreaker] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-03T22:03:38.879+05:30  INFO 97080 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-03T22:03:38.880+05:30  INFO 97080 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-03T22:03:42.220+05:30  INFO 35084 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Starting LucidityCircuitbreakerApplicationKt using Java 17.0.15 with PID 35084 (C:\code-base\lucidity-circuitbreaker\build\classes\kotlin\main started by lgane in C:\code-base\lucidity-circuitbreaker)
+2025-06-03T22:03:42.221+05:30 DEBUG 35084 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Running with Spring Boot v3.4.6, Spring v6.2.7
+2025-06-03T22:03:42.221+05:30  INFO 35084 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : No active profile set, falling back to 1 default profile: "default"
+2025-06-03T22:03:42.955+05:30  INFO 35084 --- [lucidity-circuitbreaker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-03T22:03:42.988+05:30  INFO 35084 --- [lucidity-circuitbreaker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 JDBC repository interface.
+2025-06-03T22:03:43.152+05:30  INFO 35084 --- [lucidity-circuitbreaker] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=60f99361-2f38-3298-9488-caa3f74a96e7
+2025-06-03T22:03:43.356+05:30  INFO 35084 --- [lucidity-circuitbreaker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-03T22:03:43.362+05:30  INFO 35084 --- [lucidity-circuitbreaker] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-03T22:03:43.363+05:30  INFO 35084 --- [lucidity-circuitbreaker] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-03T22:03:43.402+05:30  INFO 35084 --- [lucidity-circuitbreaker] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-03T22:03:43.402+05:30  INFO 35084 --- [lucidity-circuitbreaker] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1141 ms
+2025-06-03T22:03:43.520+05:30  WARN 35084 --- [lucidity-circuitbreaker] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'runTimeConfigController' defined in file [C:\code-base\lucidity-circuitbreaker\build\classes\kotlin\main\com\ganeshl\luciditycircuitbreaker\api\controller\RunTimeConfigController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'runtimeConfigManager' defined in file [C:\code-base\lucidity-circuitbreaker\build\classes\kotlin\main\com\ganeshl\luciditycircuitbreaker\config\RuntimeConfigManager.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'appConfigProperties': Could not bind properties to 'AppConfigProperties' : prefix=app.settings, ignoreInvalidFields=false, ignoreUnknownFields=true
+2025-06-03T22:03:43.522+05:30  INFO 35084 --- [lucidity-circuitbreaker] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-06-03T22:03:43.536+05:30  INFO 35084 --- [lucidity-circuitbreaker] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-03T22:03:43.549+05:30 ERROR 35084 --- [lucidity-circuitbreaker] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'app.settings.current-c-b' to com.ganeshl.luciditycircuitbreaker.model.CBType:
+
+    Property: app.settings.current-c-b
+    Value: "CustomCountCB"
+    Origin: class path resource [application.yml] - 18:16
+    Reason: failed to convert java.lang.String to com.ganeshl.luciditycircuitbreaker.model.CBType (caused by java.lang.IllegalArgumentException: No enum constant com.ganeshl.luciditycircuitbreaker.model.CBType.CustomCountCB)
+
+Action:
+
+Update your application's configuration. The following values are valid:
+
+    CountCB
+    TimeCB
+
+2025-06-03T22:04:50.311+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Starting LucidityCircuitbreakerApplicationKt using Java 17.0.15 with PID 4792 (C:\code-base\lucidity-circuitbreaker\build\classes\kotlin\main started by lgane in C:\code-base\lucidity-circuitbreaker)
+2025-06-03T22:04:50.312+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Running with Spring Boot v3.4.6, Spring v6.2.7
+2025-06-03T22:04:50.313+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : No active profile set, falling back to 1 default profile: "default"
+2025-06-03T22:04:51.057+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-03T22:04:51.092+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 1 JDBC repository interface.
+2025-06-03T22:04:51.257+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=60f99361-2f38-3298-9488-caa3f74a96e7
+2025-06-03T22:04:51.464+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-03T22:04:51.471+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-03T22:04:51.472+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-03T22:04:51.511+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-03T22:04:51.512+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1165 ms
+2025-06-03T22:04:51.633+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] c.g.l.config.RuntimeConfigManager        : RuntimeConfigurationManager initialized with values from application.yml {operationTimeDelay=3000, isRandomErrorEnabled=false, timeDelayEnabled=false, currentCB=CustomCountCB, errorRate=0.5}
+2025-06-03T22:04:51.666+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-03T22:04:51.807+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/testdb2 user=ADMIN
+2025-06-03T22:04:51.808+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-03T22:04:52.408+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2025-06-03T22:04:52.467+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-03T22:04:52.534+05:30  INFO 4792 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Started LucidityCircuitbreakerApplicationKt in 2.67 seconds (process running for 3.093)
+2025-06-03T22:04:52.761+05:30  INFO 4792 --- [lucidity-circuitbreaker] [RMI TCP Connection(2)-192.168.1.8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-03T22:04:52.761+05:30  INFO 4792 --- [lucidity-circuitbreaker] [RMI TCP Connection(2)-192.168.1.8] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-03T22:04:52.762+05:30  INFO 4792 --- [lucidity-circuitbreaker] [RMI TCP Connection(2)-192.168.1.8] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-03T22:04:59.761+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:04:59.762+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:04:59.762+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:04:59.763+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:04:59.768+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:05:57.866+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:05:57.867+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:05:57.867+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:05:57.867+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:05:57.868+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:05:59.388+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:05:59.388+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:05:59.389+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:05:59.389+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:05:59.389+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:06:00.255+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:00.255+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:00.255+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:06:00.255+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:06:00.256+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:06:00.937+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:00.937+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:00.938+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:06:00.938+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:06:00.939+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:06:01.398+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:01.399+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:01.399+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:06:01.399+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:06:01.400+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:06:37.776+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:37.776+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:37.776+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:37.860+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:38.754+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:38.755+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:38.755+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:38.756+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:39.186+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:39.187+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:39.188+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:39.189+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:39.646+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:39.646+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:39.646+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:39.648+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:41.491+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:41.492+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:41.492+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:06:41.492+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:06:41.493+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:06:42.032+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:42.033+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:42.033+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:06:42.033+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:06:42.034+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:06:42.364+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:42.364+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:42.364+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:06:42.364+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:06:42.365+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:06:43.973+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:43.973+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:43.974+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:43.975+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:44.452+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:44.452+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:44.452+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:44.454+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:44.694+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:44.694+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:44.695+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:44.696+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:44.866+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:44.867+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:44.867+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:44.869+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:45.037+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:45.037+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:45.037+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:45.039+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:45.195+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:45.195+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:45.195+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:45.197+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:45.358+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:45.358+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:45.359+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:45.360+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:45.537+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:45.538+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:45.538+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:45.539+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:45.737+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:45.738+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:45.738+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:45.739+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:45.913+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:45.914+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:45.914+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:45.915+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:46.089+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:46.089+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:46.089+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:06:46.091+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:06:48.363+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:48.364+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:48.364+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:06:48.364+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:06:48.365+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at jdk.internal.reflect.GeneratedMethodAccessor37.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:06:49.001+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:49.002+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:49.002+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:06:49.002+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:06:49.003+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at jdk.internal.reflect.GeneratedMethodAccessor37.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:06:49.173+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:49.173+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:49.173+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:06:49.173+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:06:49.174+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at jdk.internal.reflect.GeneratedMethodAccessor37.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:06:49.337+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:49.337+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:49.337+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:06:49.337+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:06:49.339+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at jdk.internal.reflect.GeneratedMethodAccessor37.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:06:49.511+05:30  INFO 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:06:49.512+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:06:49.512+05:30 DEBUG 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:06:49.512+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.service.UserService                : Fall back find user triggered for find user Throwing a runtime exception
+2025-06-03T22:06:49.513+05:30 ERROR 4792 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Throwing a runtime exception] with root cause
+
+java.lang.RuntimeException: Throwing a runtime exception
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser$lambda$0(UserService.kt:28)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker$lambda$0(CBService.kt:63)
+	at com.ganeshl.luciditycircuitbreaker.CB.interfaces.AbstractCustomCircuitBreaker.execute(AbstractCustomCircuitBreaker.kt:58)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:66)
+	at com.ganeshl.luciditycircuitbreaker.service.CBService.executeWithCircuitBreaker(CBService.kt:29)
+	at com.ganeshl.luciditycircuitbreaker.service.UserService.findUser(UserService.kt:36)
+	at com.ganeshl.luciditycircuitbreaker.api.controller.UserController.getUser(UserController.kt:33)
+	at jdk.internal.reflect.GeneratedMethodAccessor37.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:335)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-06-03T22:08:19.342+05:30  INFO 4792 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-03T22:08:19.370+05:30  INFO 4792 --- [lucidity-circuitbreaker] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-03T22:08:19.375+05:30  INFO 4792 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-03T22:08:19.377+05:30  INFO 4792 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-03T22:08:21.653+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Starting LucidityCircuitbreakerApplicationKt using Java 17.0.15 with PID 23096 (C:\code-base\lucidity-circuitbreaker\build\classes\kotlin\main started by lgane in C:\code-base\lucidity-circuitbreaker)
+2025-06-03T22:08:21.655+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Running with Spring Boot v3.4.6, Spring v6.2.7
+2025-06-03T22:08:21.656+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : No active profile set, falling back to 1 default profile: "default"
+2025-06-03T22:08:22.378+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-03T22:08:22.412+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 JDBC repository interface.
+2025-06-03T22:08:22.589+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=60f99361-2f38-3298-9488-caa3f74a96e7
+2025-06-03T22:08:22.791+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-03T22:08:22.799+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-03T22:08:22.799+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-03T22:08:22.841+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-03T22:08:22.841+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1156 ms
+2025-06-03T22:08:22.958+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] c.g.l.config.RuntimeConfigManager        : RuntimeConfigurationManager initialized with values from application.yml {operationTimeDelay=3000, isRandomErrorEnabled=false, timeDelayEnabled=false, currentCB=CustomCountCB, errorRate=0.5}
+2025-06-03T22:08:22.991+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-03T22:08:23.134+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/testdb2 user=ADMIN
+2025-06-03T22:08:23.136+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-03T22:08:23.733+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2025-06-03T22:08:23.793+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-03T22:08:23.857+05:30  INFO 23096 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Started LucidityCircuitbreakerApplicationKt in 2.679 seconds (process running for 3.122)
+2025-06-03T22:08:24.035+05:30  INFO 23096 --- [lucidity-circuitbreaker] [RMI TCP Connection(1)-192.168.1.8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-03T22:08:24.036+05:30  INFO 23096 --- [lucidity-circuitbreaker] [RMI TCP Connection(1)-192.168.1.8] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-03T22:08:24.036+05:30  INFO 23096 --- [lucidity-circuitbreaker] [RMI TCP Connection(1)-192.168.1.8] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-06-03T22:08:27.477+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:27.477+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:27.478+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:08:27.478+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB returned fallback result after primary failure.
+2025-06-03T22:08:28.562+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:28.562+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:28.562+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:08:28.562+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB returned fallback result after primary failure.
+2025-06-03T22:08:29.290+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:29.290+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:29.290+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:08:29.290+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB returned fallback result after primary failure.
+2025-06-03T22:08:29.866+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:29.867+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:29.867+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:08:29.867+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB returned fallback result after primary failure.
+2025-06-03T22:08:30.429+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:30.430+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:30.430+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:08:30.430+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB returned fallback result after primary failure.
+2025-06-03T22:08:32.895+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:32.895+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:32.896+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:33.114+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:33.948+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:33.948+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:33.948+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:33.951+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:34.150+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:34.151+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:34.151+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:34.152+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:34.338+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:34.339+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:34.339+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:34.340+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:34.544+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:34.545+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:34.545+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:34.546+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-10] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:34.760+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:34.760+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:34.760+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:34.762+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:34.944+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:34.944+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:34.945+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:34.946+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:35.135+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:35.135+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:35.135+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:35.137+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-3] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:35.302+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:35.302+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:35.302+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:35.304+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:35.466+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:35.466+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:35.467+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:35.468+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-6] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:35.639+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:35.639+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:35.640+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:35.641+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-5] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:35.794+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:35.794+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:35.794+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:35.796+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:35.950+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:35.950+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:35.950+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:08:35.952+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-9] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:08:37.518+05:30  INFO 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:08:37.518+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:08:37.518+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:08:37.518+05:30 DEBUG 23096 --- [lucidity-circuitbreaker] [http-nio-8080-exec-8] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB returned fallback result after primary failure.
+2025-06-03T22:11:51.476+05:30  INFO 23096 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-03T22:11:51.507+05:30  INFO 23096 --- [lucidity-circuitbreaker] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-03T22:11:51.513+05:30  INFO 23096 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-03T22:11:51.514+05:30  INFO 23096 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-03T22:15:48.299+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Starting LucidityCircuitbreakerApplicationKt using Java 17.0.15 with PID 92752 (C:\code-base\lucidity-circuitbreaker\build\classes\kotlin\main started by lgane in C:\code-base\lucidity-circuitbreaker)
+2025-06-03T22:15:48.300+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Running with Spring Boot v3.4.6, Spring v6.2.7
+2025-06-03T22:15:48.300+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : No active profile set, falling back to 1 default profile: "default"
+2025-06-03T22:15:49.045+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-03T22:15:49.081+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 JDBC repository interface.
+2025-06-03T22:15:49.250+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=0a6c7939-6b13-338b-b00e-1c0f2f3dbc4d
+2025-06-03T22:15:49.453+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-03T22:15:49.462+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-03T22:15:49.462+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-03T22:15:49.503+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-03T22:15:49.503+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1167 ms
+2025-06-03T22:15:49.624+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] c.g.l.config.RuntimeConfigManager        : RuntimeConfigurationManager initialized with values from application.yml {operationTimeDelay=3000, isRandomErrorEnabled=false, timeDelayEnabled=false, currentCB=CustomCountCB, errorRate=0.5}
+2025-06-03T22:15:49.657+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-03T22:15:49.802+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/testdb2 user=ADMIN
+2025-06-03T22:15:49.804+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-03T22:15:50.402+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2025-06-03T22:15:50.461+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-03T22:15:50.527+05:30  INFO 92752 --- [lucidity-circuitbreaker] [main] .g.l.LucidityCircuitbreakerApplicationKt : Started LucidityCircuitbreakerApplicationKt in 2.7 seconds (process running for 3.195)
+2025-06-03T22:15:51.167+05:30  INFO 92752 --- [lucidity-circuitbreaker] [RMI TCP Connection(2)-192.168.1.8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-03T22:15:51.168+05:30  INFO 92752 --- [lucidity-circuitbreaker] [RMI TCP Connection(2)-192.168.1.8] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-03T22:15:51.168+05:30  INFO 92752 --- [lucidity-circuitbreaker] [RMI TCP Connection(2)-192.168.1.8] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-06-03T22:15:56.524+05:30  INFO 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:15:56.525+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:15:56.525+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:15:56.636+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:15:56.637+05:30  INFO 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-7] c.g.l.events.CustomCBEventListener       : Circuit Breaker CustomCountCB SUCCESS Event: CB Name CustomCountCB
+2025-06-03T22:16:03.525+05:30  INFO 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:16:03.526+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:16:03.526+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:16:03.527+05:30  INFO 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.events.CustomCBEventListener       : Circuit Breaker CustomCountCB FAILURE Event: CB Name CustomCountCB
+2025-06-03T22:16:03.527+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-1] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB returned fallback result after primary failure.
+2025-06-03T22:16:06.745+05:30  INFO 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:16:06.745+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:16:06.745+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.service.UserService                : Attempting to get the user details for id: 3d198fcf-8368-4708-a885-b240b6aeee7b and throwError: false
+2025-06-03T22:16:06.747+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered success
+2025-06-03T22:16:06.747+05:30  INFO 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-4] c.g.l.events.CustomCBEventListener       : Circuit Breaker CustomCountCB SUCCESS Event: CB Name CustomCountCB
+2025-06-03T22:16:08.863+05:30  INFO 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.config.RuntimeConfigManager        : Using Runtime circuit breaker CustomCountCB
+2025-06-03T22:16:08.863+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.config.RuntimeConfigManager        : Operation Wrapper Logic Triggered
+2025-06-03T22:16:08.864+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB registered failure
+2025-06-03T22:16:08.864+05:30  INFO 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.events.CustomCBEventListener       : Circuit Breaker CustomCountCB FAILURE Event: CB Name CustomCountCB
+2025-06-03T22:16:08.864+05:30 DEBUG 92752 --- [lucidity-circuitbreaker] [http-nio-8080-exec-2] c.g.l.C.i.AbstractCustomCircuitBreaker   : CB CustomCountCB returned fallback result after primary failure.
+2025-06-03T22:16:21.314+05:30  INFO 92752 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-03T22:16:21.340+05:30  INFO 92752 --- [lucidity-circuitbreaker] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-03T22:16:21.347+05:30  INFO 92752 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-03T22:16:21.348+05:30  INFO 92752 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

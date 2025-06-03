@@ -1,8 +1,6 @@
 package com.ganeshl.luciditycircuitbreaker
 
-import com.ganeshl.luciditycircuitbreaker.CB.CustomCBFactory
 import com.ganeshl.luciditycircuitbreaker.CB.implement.CustomCountCBImplement
-import com.ganeshl.luciditycircuitbreaker.CB.interfaces.ICustomCircuitBreaker
 import com.ganeshl.luciditycircuitbreaker.CB.model.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
@@ -13,11 +11,11 @@ import org.mockito.ArgumentCaptor
 import org.mockito.Captor
 import org.mockito.Mock
 import org.mockito.Mockito.*
-import org.mockito.Spy
 import org.mockito.junit.jupiter.MockitoExtension
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.context.ApplicationEventPublisher
+import java.util.function.Function
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 import kotlin.test.assertFalse
@@ -43,8 +41,7 @@ class CustomCountCBTests {
     val successFunction = { "Success"}
     val failingFunction = { throw RuntimeException("Simulated failure") }
 
-    @Spy
-    private val spyFallbackFunction: () -> String = { "Fallback" }
+    private lateinit var mockFallbackFunction: Function<Throwable, String>
 
     private val logger: Logger = LoggerFactory.getLogger(CustomCountCBTests::class.java)
     @BeforeEach
@@ -57,7 +54,12 @@ class CustomCountCBTests {
             mockEventPublisher
         )
 
-        clearInvocations(spyFallbackFunction)
+        @Suppress("UNCHECKED_CAST") // This suppression is often needed for mocking generic interfaces
+        mockFallbackFunction = mock(Function::class.java) as Function<Throwable, String>
+
+        lenient().`when`(mockFallbackFunction.apply(any<Throwable>())).thenReturn("Fallback")
+
+        clearInvocations(mockFallbackFunction)
         reset(mockEventPublisher) // Good practice to reset mock publisher
     }
 
@@ -67,7 +69,7 @@ class CustomCountCBTests {
         @Test
         @DisplayName("Should allow requests when CLOSED and throw Success Events")
         fun shouldAllowRequestsWhenClosed() {
-            circuitBreaker.execute(successFunction, spyFallbackFunction)
+            circuitBreaker.execute(successFunction, mockFallbackFunction)
 
             // 1. verify the state is closed
             assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.state)
@@ -78,7 +80,7 @@ class CustomCountCBTests {
             assertEquals(CB_NAME, (capturedEvent as CircuitBreakerSuccessEvent).circuitBreakerName)
 
             // Verify Fallback function is never invoked
-            verify(spyFallbackFunction, never()).invoke()
+            verify(mockFallbackFunction, never()).apply(any())
 
             verifyNoMoreInteractions(mockEventPublisher)
         }
@@ -100,7 +102,7 @@ class CustomCountCBTests {
             assertEquals(CB_NAME, (eventCaptor.value as CircuitBreakerFailureEvent).circuitBreakerName)
 
             // Fallback is only invoked at OPEN States
-            verify(spyFallbackFunction, never()).invoke()
+            verify(mockFallbackFunction, never()).apply(any())
 
             verifyNoMoreInteractions(mockEventPublisher)
         }
@@ -133,7 +135,7 @@ class CustomCountCBTests {
             assertEquals(CircuitBreakerState.OPEN, stateChangeEvent.newState)
 
             // Fallback is only invoked at OPEN States
-            verify(spyFallbackFunction, never()).invoke()
+            verify(mockFallbackFunction, never()).apply(any())
 
             verifyNoMoreInteractions(mockEventPublisher)
         }
@@ -147,7 +149,7 @@ class CustomCountCBTests {
         fun transitionToOpen() {
             // Helper to ensure circuit is in OPEN state for these tests
             repeat(FAILURE_THRESHOLD) {
-                circuitBreaker.execute(failingFunction, spyFallbackFunction)
+                circuitBreaker.execute(failingFunction, mockFallbackFunction)
             }
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
             // Reset mock to only verify actions within these tests
@@ -182,7 +184,7 @@ class CustomCountCBTests {
         @DisplayName("Should record failure and remain OPEN when already OPEN")
         fun shouldRecordFailureAndRemainOpenWhenAlreadyOpen() {
             try {
-                circuitBreaker.execute(failingFunction, spyFallbackFunction)
+                circuitBreaker.execute(failingFunction, mockFallbackFunction)
             } catch (ex: Exception) {
                 // Empty Exception block since we ignore the known error in the failing funciton
             }
@@ -222,7 +224,7 @@ class CustomCountCBTests {
             // Open the circuit
             repeat(FAILURE_THRESHOLD) {
                 try {
-                    circuitBreaker.execute(failingFunction, spyFallbackFunction)
+                    circuitBreaker.execute(failingFunction, mockFallbackFunction)
                 } catch (ex: Exception) {
                     // Empty Exception block since we ignore the known error in the failing funciton
                 }
@@ -262,7 +264,7 @@ class CustomCountCBTests {
         @DisplayName("Should transition to OPEN on failed request in HALF_OPEN")
         fun shouldTransitionToOpenOnFailureInHalfOpen() {
 
-            val result = circuitBreaker.execute(failingFunction, spyFallbackFunction)
+            val result = circuitBreaker.execute(failingFunction, mockFallbackFunction)
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
             assertEquals("Fallback", result)
 
@@ -308,7 +310,7 @@ class CustomCountCBTests {
         @Test
         @DisplayName("Execute should call fallback on failure in CLOSED state if provided")
         fun executeShouldCallFallbackOnFailureInClosed() {
-            val result = circuitBreaker.execute(failingFunction, spyFallbackFunction)
+            val result = circuitBreaker.execute(failingFunction, mockFallbackFunction)
 
             assertEquals("Fallback", result)
             assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.state) // Should remain closed for first failure
@@ -322,7 +324,7 @@ class CustomCountCBTests {
             // Create an open circuit scenario
             repeat(FAILURE_THRESHOLD) {
                 try {
-                    circuitBreaker.execute(failingFunction, spyFallbackFunction)
+                    circuitBreaker.execute(failingFunction, mockFallbackFunction)
                 } catch (ex: Exception) {
                     // Empty Exception block
                 }
@@ -331,7 +333,7 @@ class CustomCountCBTests {
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
 
             // 3rd failure - circuit opens, fallback is called
-            val result = circuitBreaker.execute(failingFunction, spyFallbackFunction)
+            val result = circuitBreaker.execute(failingFunction, mockFallbackFunction)
             assertEquals("Fallback", result)
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
         }
@@ -357,7 +359,7 @@ class CustomCountCBTests {
             // Force open the circuit
             repeat(FAILURE_THRESHOLD) {
                 try {
-                    circuitBreaker.execute(failingFunction, spyFallbackFunction)
+                    circuitBreaker.execute(failingFunction, mockFallbackFunction)
                 } catch (ex: Exception) {
                     // Empty Exception Block
                 }
@@ -365,7 +367,7 @@ class CustomCountCBTests {
             assertEquals(CircuitBreakerState.OPEN, circuitBreaker.state)
             reset(mockEventPublisher)
 
-            val failingFallBackFunction = {throw java.lang.IllegalStateException()}
+            val failingFallBackFunction : (Throwable) -> String = {throw java.lang.IllegalStateException()}
             assertFailsWith<IllegalStateException> { // Expect the fallback's exception
                 circuitBreaker.execute(successFunction, failingFallBackFunction)
             }

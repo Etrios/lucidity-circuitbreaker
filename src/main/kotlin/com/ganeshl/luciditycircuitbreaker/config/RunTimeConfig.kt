@@ -27,7 +27,7 @@ class RuntimeConfigManager(
         // Load initial values from AppConfigProperties
         writeLock.lock() // Acquire write lock for initial population
         try {
-            mutableConfig["currentCB"] = appConfigProperties.currentCB.typeName
+            mutableConfig["currentCB"] = appConfigProperties.currentCB.name
             mutableConfig["errorRate"] = appConfigProperties.errorRate
             mutableConfig["timeDelayEnabled"] = appConfigProperties.timeDelayEnabled
             mutableConfig["operationTimeDelay"] = appConfigProperties.operationTimeDelayInMillis

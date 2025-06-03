@@ -2,6 +2,7 @@ package com.ganeshl.luciditycircuitbreaker.CB.interfaces
 
 import com.ganeshl.luciditycircuitbreaker.CB.model.CircuitBreakerState
 import org.springframework.context.ApplicationEventPublisher
+import java.util.function.Function
 import java.util.function.Supplier
 
 interface ICustomCircuitBreaker {
@@ -15,6 +16,6 @@ interface ICustomCircuitBreaker {
     fun allowRequest(): Boolean
 
 
-    fun <T> execute(supplier: Supplier<T>, fallback: (() -> T)? = null): T
+    fun <T> execute(supplier: Supplier<T>, fallback: Function<Throwable, T>? = null): T
 
 }

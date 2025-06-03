@@ -14,9 +14,8 @@ class CBConfig(
 
     @Bean
     fun customTimeCB(): ICustomCircuitBreaker {
-        return circuitBreakerFactory.createCustomCB(
+        return circuitBreakerFactory.create(
             cbType = CustomCBType.CustomTimeCB,
-            name = "customTimeCB",
             config = mapOf(
                 "failureThreshold" to 0.2,
                 "resetTimeout" to 60,
@@ -27,9 +26,8 @@ class CBConfig(
 
     @Bean
     fun customCountCB(): ICustomCircuitBreaker {
-        return circuitBreakerFactory.createCustomCB(
+        return circuitBreakerFactory.create(
             cbType = CustomCBType.CustomCountCB,
-            name = "customCountCB",
             config = mapOf(
                 "failureThreshold" to 10,
                 "resetTimeout" to 60

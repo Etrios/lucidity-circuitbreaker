@@ -47,13 +47,14 @@ class UserService(
     // Hence using an explicit @Suppress annotation
     @Suppress("unused")
     fun fallbackGetAllUsers(t: Throwable): List<User> {
-        logger.error("Fallback get all users triggered: ${t.message}")
-        throw t
+        return emptyList()
     }
 
     fun fallbackFindUser(t: Throwable): User? {
-
-        logger.error("Fall back find user triggered for find user ${t.message}")
-        throw t
+        return User(
+            id = "Fallback- id",
+            name = "Fallback User",
+            email = "fallback@fallback.com"
+        )
     }
 }
