@@ -1711,3 +1711,17 @@ java.lang.RuntimeException: Throwing a runtime exception
 2025-06-03T22:16:21.340+05:30  INFO 92752 --- [lucidity-circuitbreaker] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
 2025-06-03T22:16:21.347+05:30  INFO 92752 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-06-03T22:16:21.348+05:30  INFO 92752 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-03T22:19:56.447+05:30  INFO 75536 --- [lucidity-circuitbreaker] [Test worker] l.LucidityCircuitbreakerApplicationTests : Starting LucidityCircuitbreakerApplicationTests using Java 17.0.12 with PID 75536 (started by lgane in C:\code-base\lucidity-circuitbreaker)
+2025-06-03T22:19:56.449+05:30 DEBUG 75536 --- [lucidity-circuitbreaker] [Test worker] l.LucidityCircuitbreakerApplicationTests : Running with Spring Boot v3.4.6, Spring v6.2.7
+2025-06-03T22:19:56.451+05:30  INFO 75536 --- [lucidity-circuitbreaker] [Test worker] l.LucidityCircuitbreakerApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2025-06-03T22:19:58.614+05:30  INFO 75536 --- [lucidity-circuitbreaker] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-03T22:19:58.756+05:30  INFO 75536 --- [lucidity-circuitbreaker] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 1 JDBC repository interface.
+2025-06-03T22:19:59.232+05:30  INFO 75536 --- [lucidity-circuitbreaker] [Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d2d4da45-7900-339d-8f51-759879e71abe
+2025-06-03T22:19:59.607+05:30  INFO 75536 --- [lucidity-circuitbreaker] [Test worker] c.g.l.config.RuntimeConfigManager        : RuntimeConfigurationManager initialized with values from application.yml {operationTimeDelay=3000, isRandomErrorEnabled=false, timeDelayEnabled=false, currentCB=CustomCountCB, errorRate=0.5}
+2025-06-03T22:19:59.732+05:30  INFO 75536 --- [lucidity-circuitbreaker] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-03T22:20:00.191+05:30  INFO 75536 --- [lucidity-circuitbreaker] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/testdb2 user=ADMIN
+2025-06-03T22:20:00.194+05:30  INFO 75536 --- [lucidity-circuitbreaker] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-03T22:20:01.717+05:30  INFO 75536 --- [lucidity-circuitbreaker] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2025-06-03T22:20:01.822+05:30  INFO 75536 --- [lucidity-circuitbreaker] [Test worker] l.LucidityCircuitbreakerApplicationTests : Started LucidityCircuitbreakerApplicationTests in 6.115 seconds (process running for 75.701)
+2025-06-03T22:20:01.935+05:30  INFO 75536 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-03T22:20:01.940+05:30  INFO 75536 --- [lucidity-circuitbreaker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
